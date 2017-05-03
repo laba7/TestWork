@@ -25,7 +25,7 @@ public class CreateAd extends BaseTest {
         @Test(dependsOnMethods = "createNewAd")
     public void checkAd() throws InterruptedException {
             Thread.sleep(6000l);
-//            createAds.getPrice(price);
+            createAds.getPrice(price);
             createAds.privateOrBusiness();
             createAds.description(descr);
             createAds.numderPhone(number);
