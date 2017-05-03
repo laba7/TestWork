@@ -101,10 +101,10 @@ public abstract class BaseTest {
     /**
      * Closes driver instance after test class execution.
      */
-//    @AfterClass
-//    public void tearDown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+   @AfterClass
+   public void tearDown() {
+       if (driver != null) {
+           driver.quit();
+       }
+   }
 }
