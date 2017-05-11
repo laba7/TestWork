@@ -22,23 +22,27 @@ public class CreateAds {
         wait = new WebDriverWait(driver, 90);
     }
 
-    public void getName(String name){
-//        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("addingview")));
+ public void getName(String name){
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("addingview")));
         WebElement inputName = driver.findElement(By.id("add-title"));
         inputName.sendKeys(name);
     }
 
     public void selectCategory(){
         driver.findElement(By.id("targetrenderSelect1-0")).click();
-        driver.findElement(By.id("cat-3")).click();
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cat-7")));
+        driver.findElement(By.id("cat-7")).click();
 //        driver.findElement(By.className("icon-list block rel lheight16 tdnone clr")).click();
-        WebElement disks = driver.findElement(By.xpath("/html/body/div[5]/div/div[1]/div/div/div[1]/div[2]/div[2]/div[2]/div/ul/li[6]/a/span[1]"));
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[5]/div/div[1]/div/div/div[1]/div[2]/div[2]/div[2]/div/ul/li[8]/a/span[1]")));
+         WebElement disks = driver.findElement(By.xpath("/html/body/div[5]/div/div[1]/div/div/div[1]/div[2]/div[2]/div[2]/div/ul/li[8]/a/span[1]"));
         disks.click();
     }
 
     public void getPrice(String price){
-//        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("text x-normal br3 light min price paramPriceInput fleft marginleft10")));xpath("input.text.x-normal.br3.light.min.price.paramPriceInput.fleft.marginleft10"))
-        WebElement price1 = driver.findElement(By.className("text x-normal br3 light min price paramPriceInput fleft marginleft10"));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/section/div/div/form/fieldset[1]/div[3]/div[2]/div[1]/div[2]/div/div[1]/p[3]/input")));
+        WebElement price1 = driver.findElement(By.xpath("/html/body/div[1]/section/div/div/form/fieldset[1]/div[3]/div[2]/div[1]/div[2]/div/div[1]/p[3]/input"));
         price1.sendKeys(price);
     }
 
@@ -54,9 +58,8 @@ public class CreateAds {
     }
 
     public void numderPhone(String number){
-        WebElement phone = driver.findElement(this.phone);
-//        phone.click();
-        phone.clear();
+        WebElement phone = driver.findElement(By.id("add-phone"));
+
         phone.sendKeys(number);
     }
 
