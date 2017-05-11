@@ -19,7 +19,8 @@ public class AdsPage {
     }
 
     public void deleteAds(){
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("myaccountview")));
-        driver.findElement(By.className("link reporthov")).click();
+         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/section/div/div[2]/div[6]/div[2]/table/tbody/tr[1]/td[4]/div/div/a[3]/span/span")));
+        driver.findElement(By.xpath("/html/body/div[1]/section/div/div[2]/div[6]/div[2]/table/tbody/tr[1]/td[4]/div/div/a[3]/span/span")).click();
+
     }
 }
