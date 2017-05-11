@@ -19,7 +19,7 @@ public class AdvertisingPage {
     }
 
     public void addAdvertising(){
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("innerLayout")));
+       wait.until(ExpectedConditions.presenceOfElementLocated(By.className("olx-button olx-button--secondary")));
         driver.findElement(By.className("olx-button olx-button--secondary")).click();
     }
 }
